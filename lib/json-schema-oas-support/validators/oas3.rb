@@ -10,6 +10,12 @@ module JSON
           'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.0/schema.json'
         )
         @names = ['oas3', 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.0/schema.json']
+        @metaschema_name = 'oas3.json'
+      end
+
+      def metaschema
+        resources = File.expand_path('../../../../resources', __FILE__)
+        File.join(resources, @metaschema_name)
       end
 
       JSON::Validator.register_validator(self.new)
