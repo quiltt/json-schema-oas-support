@@ -7,9 +7,9 @@ module JSON
         super
         @attributes = @attributes.merge('type' => JSON::Schema::TypeOasAttribute)
         @uri = JSON::Util::URI.parse(
-          'https://raw.githubusercontent.com/googleapis/gnostic/master/OpenAPIv3/openapi-3.0.json'
+          'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.0/schema.json'
         )
-        @names = ['oas3', 'https://raw.githubusercontent.com/googleapis/gnostic/master/OpenAPIv3/openapi-3.0.json']
+        @names = ['oas3', 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.0/schema.json']
       end
 
       JSON::Validator.register_validator(self.new)
